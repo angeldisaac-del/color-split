@@ -1,0 +1,30 @@
+* { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+body { background: linear-gradient(180deg, #162032 0%, #0d131f 100%); color: #f8fafc; height: 100dvh; width: 100vw; overflow: hidden; display: flex; flex-direction: column; align-items: center; }
+.top-bar { width: 100%; max-width: 440px; display: flex; justify-content: space-between; align-items: center; padding: 14px 16px 6px; z-index: 20; }
+.stat-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 6px 14px; text-align: center; min-width: 82px; }
+.stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; }
+.stat-value { font-size: 19px; font-weight: 800; }
+.controls-group { display: flex; gap: 8px; }
+.icon-btn { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 12px; height: 40px; width: 42px; font-size: 15px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.game-area { position: relative; width: 100%; max-width: 440px; flex: 1; overflow: hidden; touch-action: manipulation; }
+.lane-guide { position: absolute; top: 12px; bottom: 110px; width: 2px; background: rgba(255,255,255,0.1); transform: translateX(-50%); pointer-events: none; }
+.left-lane { left: 28%; }
+.right-lane { left: 72%; }
+.catcher-pad { position: absolute; bottom: 68px; width: 114px; height: 36px; border-radius: 18px; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; transition: left 0.14s cubic-bezier(0.22, 1, 0.36, 1), transform 0.12s; pointer-events: none; border: 2px solid rgba(255,255,255,0.7); box-shadow: 0 6px 14px rgba(0,0,0,0.35), inset 0 2px 3px rgba(255,255,255,0.35); }
+.pad-pop { transform: translateX(-50%) scale(1.14) !important; }
+.pad-icon { color: #ffffff; font-size: 16px; font-weight: 900; line-height: 1; }
+.gem { position: absolute; width: 38px; height: 38px; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 18px; font-weight: 900; border: 2px solid rgba(255,255,255,0.85); box-shadow: 0 6px 12px rgba(0,0,0,0.35), inset 0 2px 4px rgba(255,255,255,0.4); }
+.gem-gold { background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%) !important; color: #422006 !important; border-color: #fef9c3 !important; }
+.overlay { position: fixed; inset: 0; background: rgba(13, 19, 31, 0.92); backdrop-filter: blur(8px); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 50; padding: 20px; text-align: center; }
+.overlay.active { display: flex; }
+.modal-card { background: #1a2436; border: 1px solid rgba(255,255,255,0.16); border-radius: 26px; padding: 24px 20px; width: 100%; max-width: 340px; }
+.logo-pills { display: flex; justify-content: center; gap: 16px; font-size: 30px; margin-bottom: 8px; }
+.modal-title { font-size: 28px; font-weight: 900; margin-bottom: 8px; letter-spacing: 1px; }
+.modal-sub { font-size: 14px; color: #94a3b8; margin-bottom: 20px; line-height: 1.4; }
+.setting-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; margin: 10px 0 6px; text-align: left; }
+.opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px; }
+.opt-btn { background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.14); color: #e2e8f0; border-radius: 12px; padding: 9px 8px; font-size: 13px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.opt-btn.selected { border-color: #38bdf8; background: rgba(56,189,248,0.18); color: #fff; }
+.dot-prev { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.btn-primary { width: 100%; background: linear-gradient(135deg, #10b981, #059669); color: #fff; border: none; border-radius: 14px; padding: 13px; font-size: 16px; font-weight: 800; cursor: pointer; margin-bottom: 8px; }
+.btn-secondary { width: 100%; background: rgba(255,255,255,0.09); color: #f8fafc; border: 1px solid rgba(255,255,255,0.18); border-radius: 14px; padding: 11px; font-size: 14px; font-weight: 700; cursor: pointer; }

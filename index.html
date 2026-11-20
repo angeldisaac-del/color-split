@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Color Split</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="top-bar">
+    <div class="stat-box"><div class="stat-label" id="lblScore">Puntos</div><div class="stat-value" id="scoreVal">0</div></div>
+    <div class="controls-group">
+      <button class="icon-btn" onclick="openSettings()">⚙️</button>
+      <button class="icon-btn" id="muteBtn" onclick="toggleMute()">🔊</button>
+      <button class="icon-btn" onclick="togglePause(true)">⏸</button>
+    </div>
+    <div class="stat-box"><div class="stat-label" id="lblBest">Récord</div><div class="stat-value" id="bestVal">0</div></div>
+  </div>
+
+  <div class="game-area" id="gameArea" onpointerdown="handleBoardTap(event)">
+    <div class="lane-guide left-lane"></div>
+    <div class="lane-guide right-lane"></div>
+    <div id="gemsLayer"></div>
+
+    <div class="catcher-pad" id="padLeft"><span class="pad-icon" id="iconLeft">●</span></div>
+    <div class="catcher-pad" id="padRight"><span class="pad-icon" id="iconRight">◆</span></div>
+  </div>
+
+  <div class="overlay active" id="startOverlay">
+    <div class="modal-card">
+      <div class="logo-pills"><span id="logoLeft">●</span><span id="logoRight">◆</span></div>
+      <div class="modal-title">COLOR SPLIT</div>
+      <div class="modal-sub" id="lblStartSub">Toca la pantalla para intercambiar las barras. Atrapa cada gema según su color y forma.</div>
+      <button class="btn-primary" id="lblPlayBtn" onclick="startGame()">▶ JUGAR</button>
+            <button class="btn-secondary" id="lblStartSettings" onclick="openSettings()">⚙️ Personalizar</button>
+
+    </div>
+  </div>
+
+  <div class="overlay" id="settingsOverlay">
+    <div class="modal-card">
+      <div class="modal-title" style="font-size:24px;" id="lblSettings">Personalizar</div>
+      <div class="setting-label" id="lblTheme">Colores</div>
+      <div class="opt-grid" id="themeGrid"></div>
+      <div class="setting-label" id="lblShapes">Formas</div>
+      <div class="opt-grid" id="shapeGrid"></div>
+      <div class="setting-label" id="lblLang">Idioma</div>
+      <div class="opt-grid" style="grid-template-columns:1fr 1fr;">
+        <button class="opt-btn" id="btnEs" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="opt-btn" id="btnEn" onclick="setLang('en')">🇺🇸 English</button>
+      </div>
+      <button class="btn-primary" style="margin-top:8px;" id="lblDone" onclick="closeSettings()">Listo</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="pauseOverlay">
+    <div class="modal-card">
+      <div class="modal-title" style="color:#38bdf8;" id="lblPauseTitle">Pausa</div>
+      <div class="modal-sub" id="lblPauseSub">Tómate un respiro y mantén tus reflejos listos.</div>
+      <button class="btn-primary" id="lblResume" onclick="togglePause(false)">Continuar</button>
+      <button class="btn-secondary" id="lblRestartPause" onclick="restartGame()">Reiniciar Partida</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="gameOverOverlay">
+    <div class="modal-card">
+      <div class="modal-title" style="color:#f43f5e;" id="lblGameOver">¡Fin del Juego!</div>
+      <div class="modal-sub" id="finalScoreText">Puntuación Final: 0</div>
+      <button class="btn-primary" id="continueAdBtn" onclick="useSecondChance()">🎬 Continuar (Ver Anuncio)</button>
+      <button class="btn-secondary" id="lblPlayAgain" onclick="restartGame()">Jugar de Nuevo</button>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
